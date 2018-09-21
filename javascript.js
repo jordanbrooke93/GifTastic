@@ -23,7 +23,8 @@ function displayGifs() {
             gifDiv.append(paragraph)
             image.attr("src", requested[y].images.fixed_height.url)
             gifDiv.append(image)
-            $("#gifs-appear-here").prepend(gifDiv)
+            $("#gifs-appear-here").prepend(image)
+             $(image).text(rating)
         }
     })
 }
