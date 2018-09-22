@@ -24,7 +24,11 @@ function displayGifs() {
             image.attr("src", requested[y].images.fixed_height.url)
             gifDiv.append(image)
             $("#gifs-appear-here").prepend(image)
-             $(image).text(rating)
+            $("#gifs-appear-here").prepend("Rating " + rating)
+            $("#gifs-appear-here").css({
+                color: "white"
+            });
+
         }
     })
 }
@@ -36,7 +40,7 @@ function renderButtons() {
     // create for loop to loop through topics
     for (var i = 0; i < topics.length; i++) {
         // dynamically create buttons for each topic in the array
-        var b = $("<button>");
+        var b = $("<button type='button' class='btn btn-info'>")
         // add a class - .addclass
         b.addClass("topic");
         // add attribute .attr
@@ -44,7 +48,7 @@ function renderButtons() {
         // give the buttons text from the topic in the array- .text(topics[i])
         b.text(topics[i]);
         // add button to the html all-searches.append(b) 
-        $("#all-searches").append(b);
+        $("#all-searches").append($(b));
     }
 }
 
@@ -58,7 +62,7 @@ $("#add-search").on("click", function (event) {
     topics.push(topic);
     // call renderButtons();
     renderButtons();
-})
+});
 
 $(document).on("click", ".topic", displayGifs);
 

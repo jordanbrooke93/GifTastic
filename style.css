@@ -7,3 +7,11 @@ body {
 .searches {
     color: white;
 }
+.search-bar {
+    margin-top: 20px;
+}
+
+#add-search {
+    margin-left: 385px;
+    margin-top: -65px;
+}
