@@ -60,6 +60,7 @@ $("#add-search").on("click", function (event) {
     var topic = $("#search-input").val().trim();
     // push topic into topics... topics.push(topic);
     topics.push(topic);
+    $("#search-input").val("")
     // call renderButtons();
     renderButtons();
 });
